@@ -2,6 +2,10 @@
 
  
 
+ 
+
+ 
+
 document.querySelector("#clubs").addEventListener("click", function(event) {
 
   var td = event.target;
@@ -13,12 +17,14 @@ document.querySelector("#clubs").addEventListener("click", function(event) {
   {             
 
    
-  
+
+   //  alert("td.innerHTML " + td.innerHTML)
+
  
 
                if (td.innerHTML == "Todo"){      
 
-
+  //      alert("fetchtodo " + td.value) 
 
       fetchClubs(td.value)
 
@@ -30,21 +36,21 @@ document.querySelector("#clubs").addEventListener("click", function(event) {
 
     {         
 
-        alert("add Club td.value =" + td.value  ) 
+        alert("add List td.value =" + td.value  ) 
 
-       addClub()
+       addList()
 
      }
 
               
 
-    if (td.innerHTML == "Add" && td.value != "Club")
+    if (td.innerHTML == "Add" && td.value != "List")
 
     {         
 
-        alert("add Club td.value =" + td.value  ) 
+        alert("add Todo td.value =" + td.value  ) 
 
-       addPlayer(td.value)
+       addTodo(td.value)
 
     }
 
@@ -70,24 +76,25 @@ document.querySelector("#clubs").addEventListener("click", function(event) {
 
  
 
-function fetchClubs()
+function fetchClub()
 
 {
 
   const th = document.getElementById("th0")
 
-   th.innerHTML = "Clubs"
+   th.innerHTML = "Club Names"
 
  
 
-  fetch("http://localhost:3000/clubs")
+  fetch("http://localhost:3000/clubs ")
 
   .then(r => r.json())
 
+  //  .then(r => appendLists(r))  or the next
 
-
-  .then(appendLists)
+  .then(appendClubs)
 
 }
 
  
+
