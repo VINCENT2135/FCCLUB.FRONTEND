@@ -42,7 +42,7 @@ document.querySelector("#clubs").addEventListener("click", function(event) {
 
     {         
 
-        alert("add Todo td.value =" + td.value  ) 
+        alert("add Club td.value =" + td.value  ) 
 
        addPlayer(td.value)
 
@@ -84,7 +84,7 @@ function fetchClubs()
 
   .then(r => r.json())
 
-  //  .then(r => appendLists(r))  or the next
+
 
   .then(appendLists)
 
