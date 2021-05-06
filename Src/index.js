@@ -96,5 +96,28 @@ function fetchClub()
 
 }
 
+
+function appenndClubs(clubs,player_id)
+{
+  const clubTable = document.getElementById("tbody")
+  todoClub.innerHTML = ""
+  for (let club of clubs)
+
+  club_id = player_id
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
