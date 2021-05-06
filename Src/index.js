@@ -32,25 +32,25 @@ document.querySelector("#clubs").addEventListener("click", function(event) {
 
  
 
-    if (td.innerHTML == "Add" && td.value == "List")
+    if (td.innerHTML == "Add" && td.value == "Club")
 
     {         
 
-        alert("add List td.value =" + td.value  ) 
+        alert("add Club td.value =" + td.value  ) 
 
-       addList()
+       addClub()
 
      }
 
               
 
-    if (td.innerHTML == "Add" && td.value != "List")
+    if (td.innerHTML == "Add" && td.value != "Club")
 
     {         
 
-        alert("add Todo td.value =" + td.value  ) 
+        alert("add Player td.value =" + td.value  ) 
 
-       addTodo(td.value)
+       addPlayer(td.value)
 
     }
 
@@ -64,7 +64,7 @@ document.querySelector("#clubs").addEventListener("click", function(event) {
 
      //   alert("delete List td.value =" + td.value  ) 
 
-       deleteTodo(td.value)
+       deletePlayer(td.value)
 
      }
 
