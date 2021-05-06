@@ -19,13 +19,13 @@ function fetchClubs()
 
  
 
-  fetch("http://localhost:3000/lists")
+  fetch("http://localhost:3000/clubs")
 
   .then(r => r.json())
 
 
 
-  .then(appendLists)
+  .then(appendClubs)
 
 }
 
