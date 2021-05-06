@@ -30,11 +30,6 @@ function fetchClubs()
 }
 
 
-document.querySelector("#todos").addEventListener("click", function(event) {
 
-    var td = event.target;
-
-
-})  
 
 
