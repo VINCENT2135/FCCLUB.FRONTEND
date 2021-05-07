@@ -1,4 +1,4 @@
-document.querySelector("#players").addEventClubener("click", function(event) {
+document.querySelector("#players").addEventListener("click", function(event) {
   var td = event.target;
   if ( td.matches("button")) 
   {	  
