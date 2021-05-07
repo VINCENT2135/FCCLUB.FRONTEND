@@ -113,3 +113,5 @@ document.querySelector("#players").addEventListener("click", function(event) {
  }
  
 fetchClubs() 
+
+
