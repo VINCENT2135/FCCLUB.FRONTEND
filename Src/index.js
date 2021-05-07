@@ -55,8 +55,8 @@ function appendPlayers(players)
    for (let player of players)
 	{
 	  // alert(JSON.stringify(club.players))
-	  let playera=JSON.stringify(player)
-	//  alert(playera)
+	  let players=JSON.stringify(player)
+	//  alert(players)
 	  
       const playerRow =
       `
@@ -87,7 +87,7 @@ function appendClubs(clubs)
    for (let club of clubs)
 	{
 	  // alert(JSON.stringify(club.players))
-	  let playera=JSON.stringify(club)
+	  let players=JSON.stringify(club)
 	//  alert(playera)
 	  
       const clubRow =
