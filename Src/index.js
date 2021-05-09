@@ -29,20 +29,6 @@ document.querySelector("#players").addEventListener("click", function(event) {
   });
   
 
-  function insertClub(club) {
-    const clubRow =
-      `
-    <tr id="trclub${club.id}">
-    <td><input id="clubname${club.id}"  value="${club.clubname}" type="text"></td>
-      <td></td>
-    <td><button name="Club" value="${club.id}" type="button">Update</button></td>
-    <td><button name="Club" value="${club.id}" type="button">Delete</button></td>
-    <td><button name="Club" value="${club.id}" type="button">Player</button></td>
-    </tr>
-    `
-    return clubRow
-  }
-  
   
 
   function appendPlayers(players)
