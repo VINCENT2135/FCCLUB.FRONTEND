@@ -70,6 +70,7 @@ document.querySelector("#players").addEventListener("click", function(event) {
   //	alert("appendPlayers")
      const playerTable = document.getElementById("tbody")
       
+<<<<<<< HEAD
      playerTable.innerHTML = ""
      
      for (let player of players)
@@ -158,3 +159,54 @@ document.querySelector("#players").addEventListener("click", function(event) {
   
  fetchClubs() 
  
+=======
+       const clubRow =
+       `
+       <tr id="tr${club.id}">
+       <td><input id="name${club.id}"  value="${club.clubname}" type="text"></td>
+      <td></td>
+       <td><button id="update${club.id}" type="button">Update</button></td>
+       <td><button id="delete${club.id}" type="button">Delete</button></td>
+       <td><button id="player${club.id}" value="${club.id}" type="button">Player</button></td>
+       </tr>
+       `
+       clubTable.innerHTML = clubTable.innerHTML +  clubRow
+    }
+    clubTable.innerHTML = clubTable.innerHTML +
+    `   
+       <tr id="tr${999}">
+       <td><input id="name999"  value="" type="text"></td>
+       <td><button id="add999" value="Club" type="button">Add</button></td>
+       </tr>
+    ` 
+        
+ }
+ 
+ function addClub() {
+ 
+    const newName = document.getElementById("name999").value
+    
+    alert ("addclub" + newName)
+   const body = {
+       club: {clubname: newName }
+       }
+ 
+    alert ("44 body" + body)
+    
+     const options = 
+    {
+       method: "POST",
+        headers: {"Content-Type" : "application/json", Accept : "application/json"},
+       body: JSON.stringify(body)
+     }	
+ 
+     fetch("http://localhost:3000/clubs", options)
+     .then(r => r.json())
+     .then(appendClub) 
+    
+ }
+ 
+fetchClubs() 
+
+
+>>>>>>> d9e76b76b61c3b4e3c4722834e63cb1d81e71324
