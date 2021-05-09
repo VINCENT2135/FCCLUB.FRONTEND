@@ -26,3 +26,15 @@ class Club {
 				return message(error, "error")
 			})
 	}
+	
+	
+	appendClubs(clubs) {
+		const clubTable = document.getElementById("tbody")
+
+		for (let club of clubs) {
+			clubTable.innerHTML = clubTable.innerHTML + this.insertClub(club)
+		}
+		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
+
+	}
+
