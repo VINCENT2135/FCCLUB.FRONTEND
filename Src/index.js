@@ -28,15 +28,6 @@ document.querySelector("#players").addEventListener("click", function(event) {
     }
   });
   
-  function fetchClubs() {
-    const th = document.getElementById("th0")
-    th.innerHTML = "Club Names"
-  
-    fetch("http://localhost:3000/clubs")
-      .then(r => r.json())
-      .then(appendClubs)
-  }
-  
 
   function insertClub(club) {
     const clubRow =
