@@ -182,29 +182,6 @@ document.querySelector("#players").addEventListener("click", function(event) {
         
  }
  
- function addClub() {
- 
-    const newName = document.getElementById("name999").value
-    
-    alert ("addclub" + newName)
-   const body = {
-       club: {clubname: newName }
-       }
- 
-    alert ("44 body" + body)
-    
-     const options = 
-    {
-       method: "POST",
-        headers: {"Content-Type" : "application/json", Accept : "application/json"},
-       body: JSON.stringify(body)
-     }	
- 
-     fetch("http://localhost:3000/clubs", options)
-     .then(r => r.json())
-     .then(appendClub) 
-    
- }
  
 fetchClubs() 
 
