@@ -28,16 +28,6 @@ class Club {
 	}
 	
 	
-	appendClubs(clubs) {
-		const clubTable = document.getElementById("tbody")
-
-		for (let club of clubs) {
-			clubTable.innerHTML = clubTable.innerHTML + this.insertClub(club)
-		}
-		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
-
-	}
-	
 		insertClub(club) {
 		const clubRow =
 			`
@@ -63,5 +53,40 @@ class Club {
 		return clubRow
 
 	}
+	
+		appendClubs(clubs) {
+		const clubTable = document.getElementById("tbody")
+
+		for (let club of clubs) {
+			clubTable.innerHTML = clubTable.innerHTML + this.insertClub(club)
+		}
+		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
+
+	}
 
 
+	addClub() {
+
+  const newName = document.getElementById("clubname999").value
+
+		const body = {
+			club: {
+				clubname: newName
+			}
+		}
+
+
+		const options = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json"
+			},
+			body: JSON.stringify(body)
+		}
+
+		fetch("http://localhost:3000/clubs", options)
+			.then(r => r.json())
+			.then(r => this.appendClub(r))
+
+	}
