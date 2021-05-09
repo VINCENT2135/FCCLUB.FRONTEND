@@ -37,18 +37,7 @@ document.querySelector("#players").addEventListener("click", function(event) {
       .then(appendClubs)
   }
   
-  function fetchPlayers(club) {
-    const th = document.getElementById("th0")
-    th.innerHTML = "Content"
-  
-    fetch("http://localhost:3000/players/" + club)
-      .then(r => r.json())
-      .then(function(data) {
-        return appendPlayers(data, club)
-      })
-   
-  }
-  
+
   function insertClub(club) {
     const clubRow =
       `
