@@ -37,4 +37,31 @@ class Club {
 		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
 
 	}
+	
+		insertClub(club) {
+		const clubRow =
+			`
+  <tr id="trclub${club.id}">
+  <td><input id="clubname${club.id}"  value="${club.clubname}" type="text"></td>
+	<td></td>
+  <td><button name="Club" value="${club.id}" type="button">Update</button></td>
+  <td><button name="Club" value="${club.id}" type="button">Delete</button></td>
+  <td><button name="Club" value="${club.id}" type="button">Player</button></td>
+  </tr>
+  `
+		return clubRow
+	}
+
+	insertClubAdd() {
+		const clubRow =
+			`   
+   <tr id="trclub999">
+   <td><input id="clubname999"  value="" type="text"></td>
+   <td><button id="add999" name="Club" value="Club" type="button">Add</button></td>
+   </tr>
+  `
+		return clubRow
+
+	}
+
 
