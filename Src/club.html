@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +18,63 @@
        th, td {
          padding: 5px;
        }
+	   
+      .error
+      {
+      width: 400px;
+      border: 1px solid #D8D8D8;
+      padding: 5px;
+      border-radius: 5px;
+      font-family: Arial;
+      font-size: 11px;
+      text-transform: uppercase;
+      background-color: rgb(255, 249, 242);
+      color: rgb(211, 0, 0);
+      text-align: center;
+      }
+       
+       
+      .success
+      {
+      width: 400px;
+      border: 1px solid #D8D8D8;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: Arial;
+      font-size: 11px;
+      text-transform: uppercase;
+      background-color: rgb(236, 255, 216);
+      color: green;
+      text-align: center;
+      margin-top: 30px;
+      }
+ 
+
 </style>
 </head>
 <body>
-<div id="clubs">
+<div>
 <table id="players" value = "">
 <thead>
-<tr>
-<th id="th0"> Club Name </th>
+<tr id="headrow" >
+<th id="th0">Club Name </th>
 <th> Add </th>
+<th> Delete </th>
 <th> Update </th>
-<th> Delete  </th>
-<thid="th99" > Player </th>
 </tr>
 </thead>
 <tbody id="tbody">
 </tbody>
 </table>
+<div id="message"> </div>
+
 </div>
-      <script  type="text/javascript" src="/Users/vincentivos/FCCLUB.FRONTEND/Src/index.js"></script>
+
+<script  type="text/javascript" src="/Users/vincentivos/FCCLUB.FRONTEND/Src/club.js"
+
+></script>
+<script  type="text/javascript" src="/Users/vincentivos/FCCLUB.FRONTEND/Src/player.js"></script>
+<script  type="text/javascript" src="/Users/vincentivos/FCCLUB.FRONTEND/Src/index.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
 
