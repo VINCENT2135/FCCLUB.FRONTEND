@@ -1,9 +1,8 @@
 class Player {
 	constructor() {
-
+		
 	}
-
-
+	
 	fetchPlayers(club) {
 		const th0 = document.getElementById("th0")
 		const name = document.getElementById(`clubname${club}`)
@@ -18,8 +17,6 @@ class Player {
 			.then(data => {
 				return this.appendPlayers(data, club)
 			})
-		
-
 	}
   
  
@@ -47,3 +44,27 @@ insertPlayer(player) {
   `
 		return playerRow
 	}
+	
+	appendPlayers(players, club_id) {
+		const playerTable = document.getElementById("tbody")
+
+		playerTable.innerHTML = ""
+
+		for (let player of players) {
+			playerTable.innerHTML = playerTable.innerHTML + this.insertPlayer(player)
+		}
+		playerTable.innerHTML = playerTable.innerHTML + this.insertPlayerAdd(club_id)
+	}
+
+
+	appendPlayer(player) {
+		const playerTable = document.getElementById("tbody")
+
+		var row = document.getElementById("trplayer999")
+		row.parentNode.removeChild(row)
+
+		playerTable.innerHTML = playerTable.innerHTML + this.insertPlayer(player)
+		playerTable.innerHTML = playerTable.innerHTML + this.insertPlayerAdd(player.club_id)
+
+	}
+
