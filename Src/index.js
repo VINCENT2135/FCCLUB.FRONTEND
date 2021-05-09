@@ -81,38 +81,7 @@ document.querySelector("#players").addEventListener("click", function(event) {
          
   }
   
-  function appendClubs(clubs)
-  {
-     const clubTable = document.getElementById("tbody")
-  
-     for (let club of clubs)
-     {
-       // alert(JSON.stringify(club.players))
-       let players=JSON.stringify(club)
-     
-       
-        const clubRow =
-        `
-        <tr id="tr${club.id}">
-        <td><input id="name${club.id}"  value="${club.clubname}" type="text"></td>
-       <td></td>
-        <td><button id="update${club.id}" type="button">Update</button></td>
-        <td><button id="delete${club.id}" type="button">Delete</button></td>
-        <td><button id="player${club.id}" value="${club.id}" type="button">Player</button></td>
-        </tr>
-        `
-        clubTable.innerHTML = clubTable.innerHTML +  clubRow
-     }
-     clubTable.innerHTML = clubTable.innerHTML +
-     `   
-        <tr id="tr${999}">
-        <td><input id="name999"  value="" type="text"></td>
-        <td><button id="add999" value="Club" type="button">Add</button></td>
-        </tr>
-     ` 
-         
-  }
-  
+
   function addClub() {
   
      const newName = document.getElementById("name999").value
