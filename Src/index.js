@@ -67,17 +67,17 @@ document.querySelector("#players").addEventListener("click", function(event) {
 
   function appendPlayers(players)
   {
-  //	alert("appendPlayers")
+  
      const playerTable = document.getElementById("tbody")
       
-<<<<<<< HEAD
+
      playerTable.innerHTML = ""
      
      for (let player of players)
      {
-       // alert(JSON.stringify(club.players))
+     
        let players=JSON.stringify(player)
-     //  alert(players)
+     
        
         const playerRow =
         `
@@ -109,7 +109,7 @@ document.querySelector("#players").addEventListener("click", function(event) {
      {
        // alert(JSON.stringify(club.players))
        let players=JSON.stringify(club)
-     //  alert(playera)
+     
        
         const clubRow =
         `
@@ -159,7 +159,7 @@ document.querySelector("#players").addEventListener("click", function(event) {
   
  fetchClubs() 
  
-=======
+
        const clubRow =
        `
        <tr id="tr${club.id}">
@@ -209,4 +209,4 @@ document.querySelector("#players").addEventListener("click", function(event) {
 fetchClubs() 
 
 
->>>>>>> d9e76b76b61c3b4e3c4722834e63cb1d81e71324
+
