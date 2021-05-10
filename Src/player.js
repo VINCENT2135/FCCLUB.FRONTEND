@@ -67,4 +67,32 @@ insertPlayer(player) {
 		playerTable.innerHTML = playerTable.innerHTML + this.insertPlayerAdd(player.club_id)
 
 	}
+	
+	
+	addPlayer(club_id) {
+
+		const newContent = document.getElementById("playername999").value
+
+
+		const body = {
+			player: {
+				club_id: club_id,
+				playername: newContent
+			}
+		}
+
+		const options = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json"
+			},
+			body: JSON.stringify(body)
+		}
+
+		fetch("http://localhost:3000/players", options)
+			.then(r => r.json())
+			.then(r => this.appendPlayer(r))
+
+	}
 
