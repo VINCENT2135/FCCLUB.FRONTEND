@@ -65,6 +65,9 @@ insertPlayer(player) {
 
 		playerTable.innerHTML = playerTable.innerHTML + this.insertPlayer(player)
 		playerTable.innerHTML = playerTable.innerHTML + this.insertPlayerAdd(player.club_id)
+		 message(`Player ${player.plaayername} added OK`,"success")
+
+              
 
 	}
 	
