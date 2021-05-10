@@ -131,3 +131,18 @@ class Club {
 			})
 	}
 
+	deleteClub(clubId) {
+
+		fetch(`http://localhost:3000/clubs/${clubId}`, {
+				method: "DELETE"
+			})
+			.then(r => r.json())
+			.then(m => {
+				var row = document.getElementById(`trclub${clubId}`)
+				row.remove()
+				return
+			})
+	}
+
+
+}
