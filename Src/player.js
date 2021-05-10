@@ -96,3 +96,26 @@ insertPlayer(player) {
 
 	}
 
+	updatePlayer(playerId) {
+
+		const newContent = document.getElementById(`playername${playerId}`).value
+
+		const body = {
+			player: {
+				playername: newContent
+			}
+		}
+		const options = {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json"
+			},
+			body: JSON.stringify(body)
+		}
+		fetch(`http://localhost:3000/players/${playerId}`, options)
+			.then(r => r.json())
+			.then(m => {
+				document.getElementById(`playername${playerId}`).innerHTML = newContent
+			})
+	}
