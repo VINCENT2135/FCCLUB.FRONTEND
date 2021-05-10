@@ -33,7 +33,6 @@ document.querySelector("#players").addEventListener("click", function(event) {
 	}
 });
 
-
 function message(message, type) {
 	const id = document.getElementById("message")
 
