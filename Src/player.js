@@ -122,3 +122,18 @@ insertPlayer(player) {
 				document.getElementById(`playername${playerId}`).innerHTML = newContent
 			})
 	}
+
+		deletePlayer(playerId) {
+
+		fetch(`http://localhost:3000/players/${playerId}`, {
+				method: "DELETE"
+			})
+			.then(r => r.json())
+			.then(m => {
+				var row = document.getElementById(`trplayer${playerId}`)
+				row.remove()
+				return
+			})
+	}
+
+}
