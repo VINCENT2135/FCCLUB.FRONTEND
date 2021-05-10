@@ -1,5 +1,8 @@
 # FCCLUB.FRONTEND
 
+This is the Frontend repository for my Phase 4 Rails/Javascript project for Flatiron School.
+
+
 Installation:
 After cloning the repo, install the dependencies by executing the below command in your terminal:
 
