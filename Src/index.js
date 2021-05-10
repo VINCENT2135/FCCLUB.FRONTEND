@@ -34,7 +34,18 @@ document.querySelector("#players").addEventListener("click", function(event) {
 });
 
 
+function message(message, type) {
+	const id = document.getElementById("message")
 
+	id.className = type
+	id.innerHTML = message
+
+	setTimeout(function(a) {
+		id.className = "";
+		id.innerHTML = " "
+	}, 2000)
+
+}
 
 objPlayer = new Player()
 objClub = new Club()
