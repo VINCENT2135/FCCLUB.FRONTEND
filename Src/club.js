@@ -102,3 +102,29 @@ class Club {
 
 	}
 
+		updateClub(clubId) {
+
+		const newName = document.getElementById(`clubname${clubId}`).value
+
+		const body = {
+			club: {
+				clubname: newName
+			}
+		}
+
+		const options = {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json"
+			},
+			body: JSON.stringify(body)
+		}
+
+		fetch(`http://localhost:3000/clubs/${clubId}`, options)
+			.then(r => r.json())
+			.then(m => {
+				document.getElementById(`clubname${clubId}`).innerHTML = newName
+			})
+	}
+
