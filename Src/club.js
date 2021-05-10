@@ -99,6 +99,9 @@ class Club {
 
 		clubTable.innerHTML = clubTable.innerHTML + this.insertClub(club)
 		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
+		message(`Club ${club.clubname} added OK`,"success")
+
+              
 
 	}
 
