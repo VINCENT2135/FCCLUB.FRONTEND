@@ -90,3 +90,15 @@ class Club {
 			.then(r => this.appendClub(r))
 
 	}
+	
+		appendClub(club) {
+		const clubTable = document.getElementById("tbody")
+
+		var row = document.getElementById("trclub999")
+		row.parentNode.removeChild(row)
+
+		clubTable.innerHTML = clubTable.innerHTML + this.insertClub(club)
+		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
+
+	}
+
