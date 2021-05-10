@@ -1,6 +1,6 @@
 # FCCLUB.FRONTEND
 
-This is the Frontend repository for my Phase 4 Rails/Javascript project for Flatiron School.
+
 
 
 Installation:
