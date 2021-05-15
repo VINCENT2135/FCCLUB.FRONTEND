@@ -4,6 +4,6 @@
 - Cite FCCLUB.BACKEND repository Read Me. 
  
  
-- Run Club.html file within browser. 
+- Open club.html file within browser.  
 
 
