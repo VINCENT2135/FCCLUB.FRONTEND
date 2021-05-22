@@ -1,11 +1,16 @@
 class Club {
-	constructor() {
 
-	}
+	constructor(clubname, id) {
+		if (clubname != undefined) {
+		  this.clubname = clubname;
+		  this.id = id;
+		
+		}
+	  }
 
 
 	fetchClubs() {
-
+    
 		const th0 = document.getElementById("th0")
 		th0.innerHTML = "Club Names"
 
@@ -19,7 +24,7 @@ class Club {
 				else
 					throw new Error(r.statusText)
 			})
-			//.then(appendClubs)
+		
 			.then(r => this.appendClubs(r))
 			.catch((error) => {
 				alert(error);
@@ -28,15 +33,15 @@ class Club {
 	}
 	
 	
-		insertClub(club) {
+		insertClub() {
 		const clubRow =
 			`
-  <tr id="trclub${club.id}">
-  <td><input id="clubname${club.id}"  value="${club.clubname}" type="text"></td>
+  <tr id="trclub${this.id}">
+  <td><input id="clubname${this.id}"  value="${this.clubname}" type="text"></td>
 	<td></td>
-  <td><button name="Club" value="${club.id}" type="button">Update</button></td>
-  <td><button name="Club" value="${club.id}" type="button">Delete</button></td>
-  <td><button name="Club" value="${club.id}" type="button">Player</button></td>
+  <td><button name="Club" value="${this.id}" type="button">Update</button></td>
+  <td><button name="Club" value="${this.id}" type="button">Delete</button></td>
+  <td><button name="Club" value="${this.id}" type="button">Player</button></td>
   </tr>
   `
 		return clubRow
@@ -54,11 +59,13 @@ class Club {
 
 	}
 	
-		appendClubs(clubs) {
+		appendClubs(clubs)
+		{
 		const clubTable = document.getElementById("tbody")
 
 		for (let club of clubs) {
-			clubTable.innerHTML = clubTable.innerHTML + this.insertClub(club)
+			let club2 = new Club(club.clubname, club.id); 	
+			clubTable.innerHTML = clubTable.innerHTML + club2.insertClub()
 		}
 		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
 
@@ -89,7 +96,7 @@ class Club {
 			.then(r => r.json())
 			.then(r => this.appendClub(r))
 
-	}
+		}
 	
 		appendClub(club) {
 		const clubTable = document.getElementById("tbody")
@@ -102,8 +109,7 @@ class Club {
 		message(`Club ${club.clubname} added OK`,"success")
 
               
-
-	}
+			}
 
 		updateClub(clubId) {
 
@@ -114,6 +120,12 @@ class Club {
 				clubname: newName
 			}
 		}
+
+
+
+
+
+		
 
 		const options = {
 			method: "PATCH",
@@ -131,6 +143,14 @@ class Club {
 			})
 	}
 
+
+
+
+
+
+
+
+
 	deleteClub(clubId) {
 
 		fetch(`http://localhost:3000/clubs/${clubId}`, {
@@ -140,9 +160,17 @@ class Club {
 			.then(m => {
 				var row = document.getElementById(`trclub${clubId}`)
 				row.remove()
+				message(`Club ${club.clubId} deleted OK`,"success")
 				return
+		
 			})
 	}
 
 
 }
+
+
+
+
+
+
