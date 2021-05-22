@@ -4,7 +4,7 @@ class Club {
 		if (clubname != undefined) {
 		  this.clubname = clubname;
 		  this.id = id;
-		
+		   //alert(this.clubname)
 		}
 	  }
 
@@ -13,7 +13,7 @@ class Club {
     
 		const th0 = document.getElementById("th0")
 		th0.innerHTML = "Club Names"
-
+ 
 		const th99 = document.getElementById("headrow")
 		th99.insertCell(4).innerHTML = "<b>Player</b>"
 
@@ -74,7 +74,7 @@ class Club {
 
 	addClub() {
 
-  const newName = document.getElementById("clubname999").value
+  const newName = document.getElementById("clubname999").value;
 
 		const body = {
 			club: {
@@ -104,8 +104,9 @@ class Club {
 		var row = document.getElementById("trclub999")
 		row.parentNode.removeChild(row)
 
-		clubTable.innerHTML = clubTable.innerHTML + this.insertClub(club)
-		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd()
+		let club2 = new Club(club.clubname, club.id);
+		clubTable.innerHTML = clubTable.innerHTML + club2.insertClub();
+		clubTable.innerHTML = clubTable.innerHTML + this.insertClubAdd();
 		message(`Club ${club.clubname} added OK`,"success")
 
               
@@ -168,8 +169,6 @@ class Club {
 
 
 }
-
-
 
 
 
